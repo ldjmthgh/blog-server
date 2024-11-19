@@ -1,0 +1,4 @@
+# 项目自定义配置
+project:
+  path:
+    temp: ./temp
