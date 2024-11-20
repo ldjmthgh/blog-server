@@ -1,6 +1,6 @@
 package com.github.ldjmthgh.exception;
 
-import com.ldjws.www.blog.common.CommonResponse;
+import com.github.ldjmthgh.common.CommonResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindException;

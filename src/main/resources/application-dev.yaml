@@ -1,3 +1,16 @@
+# DataSource Config
+spring:
+  datasource:
+    url: jdbc:h2:file:./db/blog;AUTO_RECONNECT=TRUE
+    driver-class-name: org.h2.Driver
+    username: ldj
+    password: 08163409
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+
 # 项目自定义配置
 project:
   path:

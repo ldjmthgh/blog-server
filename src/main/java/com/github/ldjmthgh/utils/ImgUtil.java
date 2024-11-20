@@ -15,7 +15,7 @@ public final class ImgUtil {
      * @return 校验结果
      */
     public static boolean filterImg(String type) {
-        if (null == type || "".equals(type)) {
+        if (null == type || type.isEmpty()) {
             return false;
         }
         for (String imageType : IMAGE_TYPES) {
