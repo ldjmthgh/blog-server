@@ -3,8 +3,6 @@ package com.github.ldjmthgh.service;
 import com.github.ldjmthgh.common.CommonResponse;
 import com.github.ldjmthgh.model.dto.UserDTO;
 import com.github.ldjmthgh.model.vo.UserVO;
-import org.springframework.core.io.Resource;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,10 +24,9 @@ public interface UserService {
 
     /**
      * @param authentication 授权
-     * @param userName       用户名
      * @return 三段式返回
      */
-    CommonResponse<Boolean> logout(String authentication, String userName);
+    CommonResponse<Boolean> logout(String authentication);
 
     /**
      * 获取用户信息
@@ -62,29 +59,22 @@ public interface UserService {
 
     /**
      * @param authentication 授权
-     * @param email          邮箱
-     * @param code           动态口令
-     * @return 三段式返回
-     */
-    CommonResponse<Boolean> changeEmail(String authentication, String email, String code);
-
-    /**
-     * @param authentication 授权
      * @param oldPwd         原密码
      * @param newPwd         新密码
      * @return 三段式返回
      */
     CommonResponse<Boolean> resetPassword(String authentication, String oldPwd, String newPwd);
 
+
     /**
      * 发送重置密码
      *
-     * @param code    验证码
+     * @param authentication    验证
      * @param email   邮件
      * @param request 请求
      * @return 返回
      */
-    CommonResponse<Boolean> sendEmailRestPwd(String email, String code, HttpServletRequest request);
+    CommonResponse<Boolean> sendEmailRestPwd(String email, String authentication, HttpServletRequest request);
 
     /**
      * 判断是否存在用户 存在及默认为已初始化

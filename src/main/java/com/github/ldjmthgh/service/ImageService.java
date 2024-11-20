@@ -66,7 +66,7 @@ public interface ImageService {
      * @param id 图片id
      * @return Base64图片文件
      */
-    ResponseEntity<Resource> download(String id);
+    ResponseEntity<Resource> download(Long id);
 
     /**
      * 后端分页查询

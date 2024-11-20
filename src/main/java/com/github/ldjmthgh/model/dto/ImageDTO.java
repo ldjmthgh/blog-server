@@ -15,5 +15,4 @@ public class ImageDTO {
     @NotNull(message = "图片名称参数不得为空")
     private String imageName;
     private String imageType;
-    private String imageSummary;
 }

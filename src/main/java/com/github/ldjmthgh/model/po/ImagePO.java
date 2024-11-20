@@ -1,6 +1,7 @@
 package com.github.ldjmthgh.model.po;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.github.ldjmthgh.model.dto.ImageDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -60,4 +61,9 @@ public class ImagePO {
     @LastModifiedDate
     @Column(name = "update_time")
     private Date updateTime;
+
+    public ImagePO(ImageDTO dto) {
+        this.imageName = dto.getImageName();
+        this.imageType = dto.getImageType();
+    }
 }

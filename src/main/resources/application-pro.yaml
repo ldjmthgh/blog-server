@@ -1,4 +1,31 @@
+# DataSource Config
+spring:
+  datasource:
+    url: jdbc:h2:file:./db/blog;AUTO_RECONNECT=TRUE
+    driver-class-name: org.h2.Driver
+    username: ldj
+    password: 08163409
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+  mail:
+    host: smtp.163.com
+    username: test@163.com
+    password: 123456789
+    properties:
+      mail:
+        stmp:
+          ssl:
+            enable: true
+    default-encoding: UTF-8
+    port: 8085
+
 # 项目自定义配置
 project:
   path:
+    avatar: ./blog/avatar
+    image: ./blog/image
+    article: ./blog/article
     temp: ./temp

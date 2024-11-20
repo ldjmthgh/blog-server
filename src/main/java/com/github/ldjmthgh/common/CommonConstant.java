@@ -38,9 +38,9 @@ public final class CommonConstant {
     public static final String COMMON_STR_AUTHENTICATION = "Authentication";
 
     // 3h
-    public static final Long THREE_HOUR_SECOND = 3 * 60 * 60L;
+    public static final Long THREE_HOUR_SECOND = 3 * 60 * 60 * 1000L;
     // 5min
-    public static final Long FIVE_MINUTE_SECOND = 5 * 60L;
+    public static final Long FIVE_MINUTE_SECOND = 5 * 60 * 1000L;
 
     /**
      * str序列化为list

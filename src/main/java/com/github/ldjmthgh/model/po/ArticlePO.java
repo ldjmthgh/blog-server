@@ -2,6 +2,7 @@ package com.github.ldjmthgh.model.po;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.github.ldjmthgh.model.dto.ArticleDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,7 +31,7 @@ public class ArticlePO {
     /**
      * 文章名称 限定50个字
      */
-    @Column(name = "article_name",length = 50)
+    @Column(name = "article_name", length = 50)
     private String articleName;
 
     /**
@@ -50,7 +51,7 @@ public class ArticlePO {
     /**
      * MD文档存储的绝对路径  .../articleId.md
      */
-    @Column(name = "article_storage_url",length = 500)
+    @Column(name = "article_storage_url", length = 500)
     @JsonIgnore
     private String articleStorageUrl;
 
@@ -80,4 +81,10 @@ public class ArticlePO {
     @LastModifiedDate
     @Column(name = "update_time")
     private Date updateTime;
+
+    public ArticlePO(ArticleDTO dto) {
+        this.articleName = dto.getArticleName();
+        this.articleSummary = dto.getArticleSummary();
+        this.published = dto.getPublished() ? 1 : -1;
+    }
 }

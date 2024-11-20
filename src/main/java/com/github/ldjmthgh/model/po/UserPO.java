@@ -1,5 +1,6 @@
 package com.github.ldjmthgh.model.po;
 
+import com.github.ldjmthgh.model.dto.UserDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -57,4 +58,11 @@ public class UserPO {
     @LastModifiedDate
     @Column(name = "update_time")
     private Date updateTime;
+
+    public UserPO(UserDTO dto) {
+        this.userName = dto.getUserName();
+        this.userPassword = dto.getUserPassword();
+        this.nickName = dto.getNickName();
+        this.email = dto.getEmail();
+    }
 }
